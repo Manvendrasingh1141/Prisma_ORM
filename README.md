@@ -90,29 +90,3 @@ The posts router is present in the source but is not mounted by the app. Comment
 ├── prisma.config.js      # Prisma CLI configuration
 └── server.js             # HTTP server entry point
 ```
-
-## Before deploying
-
-This repository is an early development project, not a production-ready service. In particular:
-
-- User update/delete handlers and post handlers need to be completed and tested.
-- Passwords are currently stored directly; add secure password hashing before using real accounts.
-- The server uses a fixed port (`3001`), and the configured `PORT` value is not currently used.
-- The `npm test` script is a placeholder; no automated tests are configured yet.
-
-Do not use real credentials or expose this API publicly until these items have been addressed.
-
-## Publish on GitHub
-
-This directory is not currently initialized as a Git repository. After reviewing the files and confirming that `.env` contains no tracked secrets, you can create a GitHub repository and push the project:
-
-```bash
-git init
-git add .
-git commit -m "Initial project setup"
-git branch -M main
-git remote add origin https://github.com/<YOUR-USERNAME>/<YOUR-REPOSITORY>.git
-git push -u origin main
-```
-
-Replace the remote URL with the repository URL from GitHub. The `.gitignore` excludes `node_modules`, generated Prisma files, and `.env`; `.env.example` is safe to commit because it contains only a placeholder.
